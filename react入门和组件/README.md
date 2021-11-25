@@ -19,6 +19,11 @@
    + getInitialState函数必须有返回值，可以是null,false,一个对象
    + 访问state数据的方法是"this.state.属性名"
    + 变量用{}包裹，不需要再加双引号
+
+### 6.React组件：props和render成员
+
+
+
    
    
 
