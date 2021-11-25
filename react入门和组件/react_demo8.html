@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script src="./common/react.min.js"></script>
+    <script src="./common/react-dom.min.js"></script>
+    <script src="./common/browser.min.js"></script>
+    <script type="text/babel">
+        var Hello = React.createClass({
+            getInitialState: function () {
+                return {
+                    opacity: 0
+                }
+            },
+            componentDidMount: function () {
+                setInterval(function () {
+                    var opacity = this.state.opacity;
+                    opacity -= .05;
+                    if (opacity < 0.1) {
+                        opacity = 1.0;
+                    }
+                    this.setState({
+                        opacity: opacity
+                    });
+                }.bind(this), 100);
+            },
+            render: function () {
+                return (
+                    <div style={{ opacity: this.state.opacity }}>
+                        <h2>Hello {this.props.name}</h2>
+                    </div>
+                )
+            }
+        });
+
+        ReactDOM.render(
+            <Hello name="world" />,
+            document.getElementById('demo')
+        )
+    </script>
+</body>
+
+</html>
