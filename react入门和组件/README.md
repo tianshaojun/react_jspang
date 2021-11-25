@@ -30,6 +30,14 @@
  + mounting:表示正在挂载虚拟DOM到真实DOM
  + updating:表示正在被重新渲染
  + unmounting:表示正在将虚拟DOM移除真实DOM
+ 
+每个动作术语提供两个函数：<br/>
+ + componentWillMount()
+ + componentDidMount()
+ + componentWillUpdate(object nextProps, object nextState)
+ + componentDidUpdate(object prevProps, object prevState)
+ + componentWillUnmount()
+
 
 
 
