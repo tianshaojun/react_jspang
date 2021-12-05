@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="demo"></div>
+  <script src="./common/react.min.js"></script>
+  <script src="./common/react-dom.min.js"></script>
+  <script src="./common/browser.min.js"></script>
+  <script type="text/babel">
+
+    var MyTitle = React.createClass({
+      getDefaultProps: function () {
+        return {
+          title: 'Hello JSPang'
+        }
+      },
+
+      propTypes: {
+        title: React.PropTypes.string.isRequired,
+      },
+
+      render: function () {
+        return <h2>{this.props.title}</h2>
+      }
+    })
+
+    // var data = "123";
+    // ReactDOM.render(<MyTitle title={data} />, document.getElementById('demo'));
+    ReactDOM.render(<MyTitle />, document.getElementById('demo'));
+
+  </script>
+</body>
+
+</html>
